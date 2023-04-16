@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TempHumidTracker</title>
+    <style>
+       .container{
+        display: flex;
+        flex-direction: row;
+       }
+
+       .box{
+        width: 100%;
+        padding: none;
+       }
+
+       .box img{
+        width: auto;
+        height: auto;
+       }
+
+       header{
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 90%;
+          padding: 20px 100px;
+          background: #2196F3;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          z-index: 99;
+        }
+
+        .logo{
+          font-size: 2em;
+          color: #fff;
+          user-select: none;
+        }
+
+        .navigation a{
+          position: relative;
+          font-size: 1.1em;
+          color: #fff;
+          text-decoration: none;
+          font-weight: 500;
+          margin-left: 40px;
+        }
+
+        .navigation a::after{
+          content: ' ';
+          position: absolute;
+          left: 0;
+          bottom: -6px;
+          width: 100%;
+          height: 3px;
+          background: #fff;
+          border-radius: 5px;
+          transform-origin: right;
+          transform:scaleX(0);
+          transition: transform.5s;
+        }
+
+        .navigation a:hover::after{
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+
+        .content{
+            padding: 0 0 0 0;
+            float: none;
+            text-align: justify;
+            margin-left: -100px;
+            margin-top: 150px; 
+        }
+
+        h1, h2, p, li {
+            color: #2196F3;
+        }
+    
+        a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+    
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .content h1, .content h2, .content p, .content li, .content a {
+            color: #2196F3;
+          }
+
+    </style>
+</head>
+<body>
+    <main>
+    <header>
+        <h2 class="logo">TempHumidTracker</h2>
+        <nav class="navigation">
+            <a href="{{url_for('dropdown')}}">Data</a>
+            <a href="about.pdf" download>About</a>
+            <a href="https://wa.me/254796324279">Contact</a>
+        </nav>
+    </header>
+        <div class="container">
+            <div class="box">
+                <img src="about.jpg">
+            </div>
+            <div class="box">
+                <div class="content">
+                    <h1>IoT-Based Temperature and Humidity Monitoring System</h1>
+                    <p>
+                        The high cost of proprietary embedded systems and software can create significant barriers to access and hinder progress in third world countries.
+                    </p>
+                    <p>
+                        Our project aims to bring the benefits of IoT technology to communities in developing countries by making use of open source technology.
+                    </p>
+                
+                    <h2>Project Overview</h2>
+                    <p>
+                        The system is designed to provide accurate and reliable environmental data that can be used to monitor the condition of crops in a greenhouse.<br>
+                        Greenhouses are a suitable impelementation of the IoT environmental monitoring system as they represent a closed system with limited external interfaces.
+                    </p>
+                
+                    <h2>Data Collection</h2>
+                    <p>
+                        Our system collects data on a daily basis and stores it in our database; this can be accessed by clicking on 'daily data'.
+                    </p>
+                
+                    <h2>Links</h2>
+                    <ul>
+                        <li><a href="https://github.com/SiliconWit/iot-temp-humidity-monitor">Become a contributor to our project on GitHub</a></li>
+                        <li><a href="https://siliconwit.com/iot/temperature-and-humidity-monitoring-system">Follow us on siliconwit</a></li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+    </main>
+   
+</body>
+</html>
